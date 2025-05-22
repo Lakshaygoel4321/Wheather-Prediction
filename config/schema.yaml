@@ -1,0 +1,80 @@
+columns:
+  - Date: categorical
+  - Location: categorical
+  - MinTemp: float
+  - MaxTemp: float
+  - Rainfall: float
+  - Evaporation: float
+  - Sunshine: float
+  - WindGustDir: categorical
+  - WindGustSpeed: float
+  - WindDir9am: categorical
+  - WindDir3pm: categorical
+  - WindSpeed9am: float
+  - WindSpeed3pm: float
+  - Humidity9am: float
+  - Humidity3pm: float
+  - Pressure9am: float
+  - Pressure3pm: float
+  - Cloud9am: float
+  - Cloud3pm: float
+  - Temp9am: float
+  - Temp3pm: float
+  - RainToday: categorical
+  - RainTomorrow: categorical
+
+
+categorical_columns:
+  - Date
+  - Location
+  - WindGustDir
+  - WindDir9am
+  - WindDir3pm
+  - RainToday
+  - RainTomorrow
+
+numerical_columns:
+  - MinTemp
+  - MaxTemp
+  - Rainfall
+  - Evaporation
+  - Sunshine
+  - WindGustSpeed
+  - WindSpeed9am
+  - WindSpeed3pm
+  - Humidity9am
+  - Humidity3pm
+  - Pressure9am
+  - Pressure3pm
+  - Cloud9am
+  - Cloud3pm
+  - Temp9am
+  - Temp3pm
+
+drop_columns:
+  - Date
+  - Evaporation
+  - Sunshine
+  - Cloud9am
+  - Cloud3pm
+
+ohe_encoder:
+  - Location
+  - WindGustDir
+  - WindDir9am
+  - WindDir3pm
+  - RainToday
+
+standard_scaler:
+  - MinTemp
+  - MinTemp
+  - Rainfall
+  - WindGustSpeed
+  - WindSpeed9am
+  - WindSpeed3pm
+  - Humidity9am
+  - Humidity3pm
+  - Pressure9am
+  - Pressure3pm
+  - Temp9am
+  - Temp3pm
