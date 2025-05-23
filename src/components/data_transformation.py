@@ -1,6 +1,7 @@
 import sys
 import pandas as pd
 import numpy as np
+import pickle
 
 from imblearn.over_sampling import RandomOverSampler
 from sklearn.pipeline import Pipeline
@@ -86,6 +87,9 @@ class DataTransformation:
                 logging.info("Applying preprocessing object on training dataframe and testing dataframe")
                 input_feature_train_arr = preprocessor.fit_transform(input_feature_train_df)
                 input_feature_test_arr = preprocessor.transform(input_feature_test_df)
+
+                with open('preprocessor.pkl','wb') as f:
+                    pickle.dump(preprocessor,f)
 
                 smt = RandomOverSampler()
                 input_feature_train_final, target_feature_train_final = smt.fit_resample(
